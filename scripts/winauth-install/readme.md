@@ -1,0 +1,1 @@
+dotnet3.5 version does not work in wine, even if i have dotnet35 installed via winetricks but this one does. make sure to open winecfg and disable allowing desktop environments to control the windows.
