@@ -1,5 +1,5 @@
 #!/bin/sh
-export OSU_INSTALL_LOCATION="/mnt/ti/games/x86/osu-stable/"
+export OSU_INSTALL_LOCATION="$HOME/.local/share/osu-stable/"
 
 mkdir -p "$HOME/.local/share/wineprefixes/"
 
@@ -9,18 +9,14 @@ export __GL_SYNC_TO_VBLANK=0
 export WINEPREFIX="$HOME/.local/share/wineprefixes/osu-stable"
 export WINEARCH=win32 
 
-export STAGING_AUDIO_DURATION=20000
+export STAGING_AUDIO_DURATION=200000
 export STAGING_AUDIO_PERIOD=10000
 
 export PATH="/opt/wine-osu/bin:$PATH"
 
 if [ ! -f "$HOME/.local/share/applications/osu-stable.desktop" ]
 then
-    mkdir -p "$HOME/.local/share/icons/"
     mkdir -p "$HOME/.local/share/applications/"
-
-    wget -O "$HOME/.local/share/icons/osu-stable.png" "https://i.imgur.com/Rswh32I.png"
-    
     echo "[Desktop Entry]
           Type=Application
           Name=osu!
@@ -29,6 +25,12 @@ then
           Categories=Game;
           StartupWMClass=osu!.exe
           MimeType=x-scheme-handler/osu" > "$HOME/.local/share/applications/osu-stable.desktop"
+fi
+
+if [ ! -f "$HOME/.local/share/icons/osu-stable.png" ]
+then
+    mkdir -p "$HOME/.local/share/icons/"
+    wget -O "$HOME/.local/share/icons/osu-stable.png" "https://i.imgur.com/Rswh32I.png"
 fi
 
 if [ ! -d "$OSU_INSTALL_LOCATION" ]
