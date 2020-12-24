@@ -2,6 +2,8 @@
 
 I could outline the manual steps, but I found it better to just make a script that automates everything. Although, you will need to [lower pulseaudio latency](https://github.com/Kyuunex/my-linux-stuff/tree/main/how-tos/pulseaudio-lower-latency) if you are using pulseaudio.
 
+---
+
 Firstly, make sure you have wine, winetricks and it's dependencies installed.
 
 Download the script in your `bin` folder and make it executable through these commands: (This assumes your `bin` folder is in your `PATH`. If not, add it or use a different folder that is.)
@@ -27,4 +29,10 @@ All subsequent launches can be done the menu entry the script made.
 
 Also, please don't use Audio Compatibility Mode, it makes the latency higher.
 
+---
+
 This guide is based on [this one](https://osu.ppy.sh/community/forums/topics/367783) by Franc[e]sco
+
+Other than this, there's [ThePooN's guide](https://blog.thepoon.fr/osuLinuxAudioLatency/) for this but I have had many stability problems using a modifed versions of wine and also that wine build is outdated.
+
+Alternatively, you can use [this lutris install script](https://lutris.net/games/osu/) that uses Franc[e]sco's solution with tkg's custom wine build, but, it does not set up file associations and `osu://` link handling I think, not sure.
