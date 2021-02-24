@@ -36,7 +36,7 @@ fi
 
 if [ ! -d "$WINEPREFIX" ]
 then
-    winetricks -q --force dotnet48 gdiplus cjkfonts msxml3 msxml4 msxml6
+    winetricks -q --force cjkfonts gdiplus dotnet48
     wine reg add "HKCU\Software\Wine\DirectSound" /v "HelBuflen" /t REG_SZ /d "512" /f
     wine reg add "HKCU\Software\Wine\DirectSound" /v "SndQueueMax" /t REG_SZ /d "3" /f 
     # winetricks sound=alsa
